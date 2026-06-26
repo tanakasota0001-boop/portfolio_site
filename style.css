@@ -713,17 +713,23 @@ ol, ul { list-style: none; }
 .process-step {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 24px;
 }
 .step-header {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
+  width: 100%;
 }
 .step-marker {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 .step-number {
   width: 48px;
@@ -739,17 +745,19 @@ ol, ul { list-style: none; }
   font-weight: 700;
   font-size: 1.1rem;
   z-index: 2;
-  transition: background-color 0.4s, color 0.4s, border-color 0.4s;
+  box-shadow: 0 0 0 6px var(--paper); /* 背景色と同じ色でマスクして実線を隠す */
+  transition: background-color 0.4s, color 0.4s, border-color 0.4s, box-shadow 0.4s;
 }
 .process-step:hover .step-number {
   background: var(--gold);
   color: var(--white);
   border-color: var(--gold);
+  box-shadow: 0 0 0 6px var(--paper), 0 4px 12px rgba(255, 115, 0, 0.15);
 }
 .step-line {
   position: absolute;
-  left: 48px;
-  right: -40px;
+  left: 50%; /* ドットの中央からスタート */
+  width: calc(100% + 40px); /* カラム幅 ＋ gap幅 分だけ右に伸ばす */
   height: 2px;
   background: var(--line);
   z-index: 1;
@@ -1011,14 +1019,20 @@ ol, ul { list-style: none; }
     flex-direction: row;
     gap: 24px;
     align-items: flex-start;
+    text-align: left; /* 左寄せに戻す */
   }
   .step-header {
     flex-shrink: 0;
     width: 130px;
+    align-items: flex-start; /* 左寄せに戻す */
+  }
+  .step-marker {
+    justify-content: flex-start; /* 左寄せに戻す */
+    width: auto;
   }
   .step-line {
     top: 48px;
-    left: 24px;
+    left: 24px; /* ドットの中央 */
     width: 2px;
     height: calc(100% + 48px + 24px);
     right: auto;
