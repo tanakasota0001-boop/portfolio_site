@@ -423,6 +423,52 @@ ol, ul { list-style: none; }
   letter-spacing: 0.04em;
 }
 
+.value-compare {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+.compare-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.compare-badge {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  line-height: 1.4;
+  text-align: center;
+  width: 58px;
+}
+.compare-badge--before {
+  background: var(--line);
+  color: var(--muted);
+}
+.compare-badge--after {
+  background: rgba(255, 115, 0, 0.1);
+  color: var(--gold); /* オレンジ */
+}
+.compare-desc {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin: 0;
+}
+.compare-row--before .compare-desc {
+  color: var(--muted);
+}
+.compare-row--after .compare-desc {
+  color: var(--ink);
+  font-weight: 500;
+}
+
 /* ==========================================================
    GALLERY — 非対称グリッド
    ========================================================== */
