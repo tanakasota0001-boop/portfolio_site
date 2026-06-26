@@ -576,6 +576,70 @@ ol, ul { list-style: none; }
 }
 
 /* ==========================================================
+   FAQ — 不安解消セクション
+   ========================================================== */
+.faq {
+  background: var(--white);
+  padding: clamp(80px, 12vw, 140px) var(--gap);
+}
+.faq-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.faq-header {
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.faq-heading {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.faq-heading em {
+  font-style: normal;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold);
+  font-size: 1.05em;
+}
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.faq-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.faq-q {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 2.2rem;
+  color: var(--gold);
+  line-height: 1;
+}
+.faq-body h3 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+.faq-body p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.85;
+  letter-spacing: 0.03em;
+}
+
+/* ==========================================================
    PROCESS
    ========================================================== */
 .process {
@@ -872,6 +936,14 @@ ol, ul { list-style: none; }
   .process-list {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .faq-item {
+    padding-top: 24px;
   }
 }
 
