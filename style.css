@@ -705,52 +705,76 @@ ol, ul { list-style: none; }
   letter-spacing: -0.02em;
   color: var(--ink);
 }
-.process-list {
+.process-flow {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
+  gap: 40px;
 }
-.process-item {
-  padding: 40px 36px;
-  border: 1px solid var(--line);
-  background: var(--white);
+.process-step {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  transition: background .3s, border-color .3s;
+  gap: 24px;
 }
-.process-item:hover {
-  background: var(--ink);
-  border-color: var(--ink);
+.step-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
-.process-item:hover .process-num,
-.process-item:hover h3,
-.process-item:hover p {
-  color: var(--white);
+.step-marker {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
-.process-item:hover p { color: rgba(255,255,255,.5); }
-
-.process-num {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 2.4rem;
+.step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--gold);
   color: var(--gold);
-  line-height: 1;
-  transition: color .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  z-index: 2;
+  transition: background-color 0.4s, color 0.4s, border-color 0.4s;
 }
-.process-body h3 {
-  font-size: 1rem;
+.process-step:hover .step-number {
+  background: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+}
+.step-line {
+  position: absolute;
+  left: 48px;
+  right: -40px;
+  height: 2px;
+  background: var(--line);
+  z-index: 1;
+  transition: background-color 0.4s;
+}
+.process-step:hover .step-line {
+  background: var(--gold);
+}
+.process-step:last-child .step-line {
+  display: none;
+}
+.step-header h3 {
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--ink);
-  margin-bottom: 10px;
-  transition: color .3s;
+  margin: 0;
+  letter-spacing: 0.02em;
 }
-.process-body p {
-  font-size: 0.82rem;
+.step-body p {
+  font-size: 0.85rem;
   font-weight: 300;
   color: var(--muted);
-  line-height: 1.8;
-  transition: color .3s;
+  line-height: 1.85;
+  margin: 0;
+  letter-spacing: 0.03em;
 }
 
 /* ==========================================================
@@ -979,9 +1003,28 @@ ol, ul { list-style: none; }
   .gallery-item:nth-child(5) { grid-column: 3 / 5; }
   .gallery-item:nth-child(6) { grid-column: 5 / 7; }
 
-  .process-list {
+  .process-flow {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 48px;
+  }
+  .process-step {
+    flex-direction: row;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .step-header {
+    flex-shrink: 0;
+    width: 130px;
+  }
+  .step-line {
+    top: 48px;
+    left: 24px;
+    width: 2px;
+    height: calc(100% + 48px + 24px);
+    right: auto;
+  }
+  .step-body {
+    padding-top: 12px;
   }
 
   .faq-grid {
