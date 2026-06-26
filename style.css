@@ -10,10 +10,10 @@
   --line:      #E8E6E2;
 
   /* Single accent */
-  --gold:      #C9A96E;   /* ← アクセントカラーはここだけ変更 */
+  --gold:      #FF7300;   /* ← アクセントカラーはここだけ変更 */
 
   /* Typography */
-  --sans:   'Noto Sans JP', 'Inter', sans-serif;
+  --sans:   'Outfit', 'Noto Sans JP', 'Inter', sans-serif;
   --serif:  'Cormorant Garamond', serif;
 
   /* Spacing */
@@ -102,15 +102,47 @@ ol, ul { list-style: none; }
 }
 
 .nav-logo {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
   color: var(--white);     /* white on dark hero */
   transition: color .4s;
 }
 .nav.solid .nav-logo { color: var(--ink); }
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#logo-img {
+  display: block;
+  height: 28px;
+  width: auto;
+  filter: invert(1) hue-rotate(180deg); /* 黒い文字を白くし、オレンジを維持 */
+  transition: filter 0.4s;
+}
+
+.nav.solid #logo-img {
+  filter: none; /* solidな状態（白背景）では元の黒文字ロゴにする */
+}
+
+.logo-subtext {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  padding-left: 16px;
+  text-transform: none;
+  transition: color 0.4s, border-left-color 0.4s;
+}
+
+.nav.solid .logo-subtext {
+  color: var(--ink-soft);
+  border-left-color: var(--line);
+}
 
 .nav-links {
   display: flex;
@@ -783,6 +815,8 @@ ol, ul { list-style: none; }
    RESPONSIVE
    ========================================================== */
 @media (max-width: 900px) {
+  .logo-subtext { display: none; }
+
   .hero {
     grid-template-columns: 0 1fr;
   }
