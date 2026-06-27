@@ -273,8 +273,8 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 36px;
-  max-width: 860px;
+  gap: 28px; /* 余白を調整して一体感を向上 */
+  max-width: 900px;
   z-index: 10;
 }
 
@@ -305,27 +305,27 @@ ul {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(2.2rem, 6.2vw, 4.6rem); /* 日本語の長文コピーがはみ出さないよう調整 */
+  font-size: clamp(2.4rem, 6.8vw, 5.0rem); /* サイズを大きくしてプレミアム感を強調 */
   letter-spacing: 0.03em;
   color: var(--ink);
-  line-height: 1.2;
+  line-height: 1.25;
   margin-bottom: 8px;
 }
 
 .hero-line--md {
-  font-size: clamp(1.3rem, 3.2vw, 2.2rem);
+  font-size: clamp(1.4rem, 3.8vw, 2.5rem); /* サイズを大きく調整 */
   color: var(--ink-soft);
   font-weight: 500;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   margin-top: 8px;
 }
 
 .hero-body {
-  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+  font-size: clamp(1.0rem, 2vw, 1.15rem); /* 小さすぎたフォントサイズを大きく調整 */
   font-weight: 300;
   color: var(--muted);
-  line-height: 2;
-  max-width: 480px;
+  line-height: 1.9;
+  max-width: 580px; /* 改行幅を調整 */
   margin: 0 auto;
   letter-spacing: 0.06em;
 }
@@ -393,16 +393,16 @@ ul {
 }
 
 .hero-cta.hero-cta--secondary {
-  background-color: transparent;
+  background-color: var(--ink); /* 背景黒 */
   border-color: var(--ink);
-  color: var(--ink);
-  box-shadow: none;
+  color: var(--white); /* 文字白 */
+  box-shadow: 0 4px 12px rgba(36, 36, 36, 0.08);
 }
 
 .hero-cta.hero-cta--secondary:hover {
-  background-color: var(--ink);
+  background-color: transparent;
   border-color: var(--ink);
-  color: var(--white);
+  color: var(--ink);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(36, 36, 36, 0.12);
 }
