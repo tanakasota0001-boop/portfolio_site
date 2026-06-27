@@ -305,10 +305,10 @@ ul {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(3rem, 8.5vw, 6.5rem);
+  font-size: clamp(2.2rem, 6.2vw, 4.6rem); /* 日本語の長文コピーがはみ出さないよう調整 */
   letter-spacing: 0.03em;
   color: var(--ink);
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 8px;
 }
 
@@ -365,6 +365,46 @@ ul {
 
 .hero-cta:hover .hero-cta-arrow {
   transform: translateX(4px);
+}
+
+/* ヒーロー用ボタンレイアウトとカラーバリエーション */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.hero-cta.hero-cta--primary {
+  background-color: #06C755;
+  border-color: #06C755;
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(6, 199, 85, 0.15);
+}
+
+.hero-cta.hero-cta--primary:hover {
+  background-color: #05b34c;
+  border-color: #05b34c;
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(6, 199, 85, 0.25);
+  transform: translateY(-2px);
+}
+
+.hero-cta.hero-cta--secondary {
+  background-color: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+  box-shadow: none;
+}
+
+.hero-cta.hero-cta--secondary:hover {
+  background-color: var(--ink);
+  border-color: var(--ink);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(36, 36, 36, 0.12);
 }
 
 /* Scroll indicator */
@@ -590,9 +630,6 @@ ul {
   max-width: 1200px;
   margin: 0 auto clamp(40px, 5vw, 64px);
   padding: 0 var(--gap);
-  display: flex;
-  align-items: baseline;
-  gap: 32px;
 }
 
 .gallery-heading {
@@ -716,14 +753,14 @@ ul {
   display: flex;
   align-items: flex-end;
   padding: 24px 28px;
-  background: linear-gradient(to top, rgba(0, 0, 0, .6) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity .35s;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 35%);
+  opacity: 1; /* 常時表示 */
+  transition: background .35s;
   z-index: 2;
 }
 
 .gallery-item:hover .gallery-overlay {
-  opacity: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 45%);
 }
 
 .gallery-overlay-inner {
@@ -738,24 +775,27 @@ ul {
   font-weight: 500;
   color: var(--white);
   letter-spacing: 0.08em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* テキストの視認性向上のため */
 }
 
 .gallery-overlay-arrow {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, .5);
+  border: 1px solid rgba(255, 255, 255, .35);
+  background: rgba(0, 0, 0, .2);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
   font-size: 0.9rem;
-  transition: background .25s, border-color .25s;
+  transition: background .25s, border-color .25s, transform .25s var(--ease);
 }
 
 .gallery-item:hover .gallery-overlay-arrow {
   background: var(--gold);
   border-color: var(--gold);
+  transform: scale(1.08);
 }
 
 /* ==========================================================

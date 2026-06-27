@@ -28,7 +28,11 @@
         <div class="gallery-overlay">
           <div class="gallery-overlay-inner">
             <span class="gallery-overlay-name">${s.name || ''}</span>
-            <span class="gallery-overlay-arrow">↗</span>
+            <span class="gallery-overlay-arrow">
+              <svg width="6" height="10" viewBox="0 0 6 10" fill="none" style="display: block;">
+                <path d="M1 9l4-4-4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
           </div>
         </div>
       </a>
