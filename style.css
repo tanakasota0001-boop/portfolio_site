@@ -313,11 +313,12 @@ ul {
 }
 
 .hero-line--md {
-  font-size: clamp(1.4rem, 3.8vw, 2.5rem); /* サイズを大きく調整 */
-  color: var(--ink-soft);
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  margin-top: 8px;
+  font-size: clamp(1.8rem, 4.8vw, 3.2rem); /* キャッチコピーの視認性向上のため、さらに大きく調整 */
+  color: var(--ink); /* よりはっきりとした黒（var(--ink)）にして力強く */
+  font-weight: 700; /* 力強さとプレミアム感を高めるために太字に */
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+  margin-top: 6px;
 }
 
 .hero-body {
